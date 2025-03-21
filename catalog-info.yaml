@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rhtap-quarkus-app-1 
+  description: Secure Supply Chain Example for Quarkus Java example with advanced continuous integration pipeline covering building, CVE scanning, security scanning, signatures,  attestations, SLSA provenance and SBOM along with Gitops-based continuous deployment   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=rhtap-quarkus-app-1
+    backstage.io/kubernetes-id: rhtap-quarkus-app-1 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: rhtap-quarkus-app-1
+    quay.io/repository-slug: mvaldron-rhdh/rhtap-quarkus-app-1
+  tags: ["java", "quarkus", "sscs", "sbom", "acs"] 
+spec:
+  type: service
+  owner: user:default/michael-valdron 
+  lifecycle: experimental
+ 
